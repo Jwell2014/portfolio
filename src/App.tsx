@@ -1,8 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './composants/Header';
 import ProjectList from './composants/ProjectList';
+
+import { Button } from 'primereact/button';
+
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
 
 function App() {
   return (
