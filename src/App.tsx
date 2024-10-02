@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './composants/Header';
+import ProjectList from './composants/ProjectList';
 
 function App() {
   return (
@@ -19,7 +21,13 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        <Header />
+        <ProjectList />
+        {/* Ajoute d'autres sections comme À propos et Contact ici */}
+      </div>
     </div>
+
   );
 }
 
