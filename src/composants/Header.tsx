@@ -18,8 +18,8 @@ const Header: React.FC = () => {
         }
     ];
 
-    const start = <i className="pi pi-circle-fill mr-4" style={{ color: 'white' }}></i>;
-    const end = <i className="pi pi-circle-fill ml-4" style={{ color: 'white' }}></i>
+    const start = <i className="pi pi-circle-fill mr-4" style={{ color: '#2196F3' }}></i>;
+    const end = <i className="pi pi-circle-fill ml-4" style={{ color: '#2196F3' }}></i>
 
 
     return (

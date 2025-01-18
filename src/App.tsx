@@ -14,7 +14,11 @@ function App() {
     <div className="App">
       <Header />
       <div className="flex align-items-center border-bottom-1 surface-border surface-overlay w-full">
-        <p className="w-full m-0" style={{ fontSize: '16vw' }}>PORTEFOLIO</p>
+
+        <p className="w-full m-0" style={{ fontSize: '15vw' }}>
+          PORTEFOLIO
+        </p>
+
       </div>
       <Introduction />
       <ProjectList />
