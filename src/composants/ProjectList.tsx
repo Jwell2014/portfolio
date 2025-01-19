@@ -26,7 +26,7 @@ const ProjectList: React.FC = () => {
                                 alt={project.title}
                                 className="w-full border-round mb-3"
                                 style={{
-                                    objectFit: 'cover',
+                                    objectFit: 'contain',
                                     maxHeight: '350px',
                                     width: '100%',
                                 }}
