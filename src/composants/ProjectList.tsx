@@ -8,23 +8,40 @@ const ProjectList: React.FC = () => {
             <div className="grid">
                 {projects.map((project) => (
                     <div
-                        className="col-12 md:col-6 lg:col-4 mb-4"
+                        className="col-12 md:col-6 lg:col-6 mb-4"
                         key={project.id}
                         style={{ padding: '0 0.5rem' }}
                     >
-                        <div className="card flex flex-column align-items-center">
+                        <div className="card flex flex-column align-items-center justify-content-center p-4 shadow-2 surface-1">
                             <img
                                 src={project.image}
                                 alt={project.title}
                                 className="w-full border-round mb-3"
                                 style={{
                                     objectFit: 'cover',
-                                    maxHeight: '200px',
+                                    maxHeight: '350px',
                                     width: '100%',
                                 }}
                             />
                             <h3 className="text-center">{project.title}</h3>
-                            <p className="m-0 text-center">{project.description}</p>
+                            <h4 className="text-center">Desciption</h4>
+                            <p className="m-0">{project.description}</p>
+                            <h4 className="text-center">Caractéristiques</h4>
+                            <ul className="text-left pl-5">
+                                {project.features && project.features.map((feature, index) => (
+                                    <li key={index}>{feature}</li>
+                                ))}
+                            </ul>
+                            <h4 className="text-center">Technologies</h4>
+                            <ul className="text-left pl-5">
+                                {project.technologies && project.technologies.map((technologie, index) => (
+                                    <li key={index}>{technologie}</li>
+                                ))}
+                            </ul>
+                            <h4 className="text-center">Objectif</h4>
+                            <p className="m-0 text-center">{project.objective}</p>
+
+
                             <a
                                 href={project.url}
                                 target="_blank"
