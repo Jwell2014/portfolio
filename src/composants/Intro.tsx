@@ -1,6 +1,9 @@
 import React from 'react';
+import { Dialog } from 'primereact/dialog';
+
 
 const Introduction = () => {
+    const [isContactVisible, setContactVisibility] = React.useState(false);
     return (
         <>
 
@@ -14,7 +17,6 @@ const Introduction = () => {
                 <div className="text-lg md:text-xl mb-5" style={{ maxWidth: '800px', lineHeight: '1.8' }}>
                     <p><strong>Que trouverez-vous ici ?</strong></p>
                     <ul className="list-disc ml-5 text-left" style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'left' }}>
-                        <li>Mes <strong>diplômes et certifications</strong>, qui témoignent de mon expertise.</li>
                         <li>Mes <strong>projets professionnels</strong> et personnels, qui reflètent ma polyvalence et mon engagement.</li>
                         <li>Une <strong>vision dynamique</strong> de mon travail, basée sur des technologies modernes et des approches DevOps.</li>
                     </ul>
@@ -24,8 +26,38 @@ const Introduction = () => {
                     Parce que chaque projet est une histoire, et j’ai à cœur de partager la mienne avec vous. Que vous soyez recruteur, collaborateur ou simplement curieux, j’espère que ce site répondra à vos attentes et vous inspirera confiance.
                 </p>
                 <p className="text-lg font-bold">
-                    N’hésitez pas à <a href="#contact" style={{ color: '#2196F3', textDecoration: 'underline' }}>me contacter</a> pour échanger ou en savoir plus. Bonne visite !
+                    N’hésitez pas à <a href="#contact" onClick={() => setContactVisibility(true)} style={{ color: '#2196F3', textDecoration: 'underline' }}>me contacter</a> pour échanger ou en savoir plus. Bonne visite !
                 </p>
+
+                <div className="grid">
+                    <Dialog className='sm:w-8' header={"Contact"} visible={isContactVisible} onHide={() => {
+                        if (isContactVisible) setContactVisibility(false);
+                    }}>
+                        <p className="m-0">
+                            Vous souhaitez me contacter pour discuter d’un projet, d’une collaboration ou simplement pour me dire bonjour ?<br />
+                            N’hésitez pas à m’envoyer un message en m’envoyant un e-mail à l’adresse suivante :<br /><br />
+                            <a
+                                href="mailto:sotoscoraline@gmail.com"
+                                className="text-primary underline hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                sotoscoraline@gmail.com
+                            </a>
+                        </p>
+                        <p>Je vous répondrai dans les plus brefs délais !</p>
+                        <p>Vous pouvez également me contacter par téléphone au numéro suivant :</p>
+                        <p>
+                            <a
+                                href="tel:+41778133367"
+                                className="text-primary underline hover:underline"
+                            >
+                                +41 77 813 33 67
+                            </a>
+                        </p>
+                        <p>À très bientôt !</p>
+                    </Dialog>
+                </div>
             </section>
         </>
     );

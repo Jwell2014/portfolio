@@ -1,5 +1,6 @@
 import React from 'react';
 import projects from '../data/projects';
+import { Button } from 'primereact/button';
 
 const ProjectList: React.FC = () => {
     return (
@@ -8,11 +9,18 @@ const ProjectList: React.FC = () => {
             <div className="grid">
                 {projects.map((project) => (
                     <div
-                        className="col-12 md:col-6 lg:col-6 mb-4"
+                        className="col-12 md:col-6 lg:col-6 mb-4 border-bottom-1"
                         key={project.id}
                         style={{ padding: '0 0.5rem' }}
                     >
-                        <div className="card flex flex-column align-items-center justify-content-center p-4 shadow-2 surface-1">
+                        <div
+                            className="card flex flex-column align-items-center justify-content-between p-4 shadow-2 surface-1"
+                            style={{
+                                height: '100%', // Assure que toutes les cards prennent toute la hauteur disponible
+                                display: 'flex',
+                                flexDirection: 'column',
+                            }}
+                        >
                             <img
                                 src={project.image}
                                 alt={project.title}
@@ -41,22 +49,17 @@ const ProjectList: React.FC = () => {
                             <h4 className="text-center">Objectif</h4>
                             <p className="m-0 text-center">{project.objective}</p>
 
-
-                            <a
-                                href={project.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-2 inline-block text-primary"
-                            >
-                                Voir le projet
-                            </a>
+                            <Button
+                                className="mt-5"
+                                label="Voir le projet"
+                                raised
+                                onClick={() => window.open(project.url)}
+                            />
                         </div>
                     </div>
                 ))}
             </div>
         </section>
-
-
     );
 };
 
